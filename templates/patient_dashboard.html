@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, Patient</h1>
+    <h2>Your Appointments:</h2>
+    <ul>
+        {% for appointment in appointments %}
+            <li>{{ appointment.date }} - {{ appointment.time }} with Dr. {{ appointment.doctor.name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('book_appointment') }}">Book an Appointment</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
